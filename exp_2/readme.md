@@ -1,6 +1,7 @@
 # 《操作系统》实验报告
 
------------- ---------------------- --
+------
+
   学 号：      16281015
   姓 名：      王子谦
   专 业：      计算机科学与技术
@@ -8,7 +9,8 @@
                
                
   提交日期：   2019年3月18日
------------- ---------------------- --
+
+------
 
 # 《操作系统》实验二
 
@@ -62,53 +64,51 @@
 
 **实验过程与思路：**
 
-1.  该实验关键在于对fork()函数的理解，fork（）函数通过系统调用创建一个与原来进程几乎完全相同的进程，也就是两个进程可以做完全相同的事。返回值有两个，返回值为0时，表示为子进程。返回值&gt;0时，为父进程，且返回值为子进程Id.该实验对fork返回值进行条件分支比较。
+1. 该实验关键在于对fork()函数的理解，fork（）函数通过系统调用创建一个与原来进程几乎完全相同的进程，也就是两个进程可以做完全相同的事。返回值有两个，返回值为0时，表示为子进程。返回值&gt;0时，为父进程，且返回值为子进程Id.该实验对fork返回值进行条件分支比较。
 
 > **源代码：**
 >
 > ```c
-> #include &lt;unistd.h&gt;**
+> #include &lt;unistd.h&gt;
 > 
-> **\#include &lt;stdio.h&gt;**
+> \#include &lt;stdio.h&gt;
 > 
-> **int main()**
+> int main()
 > 
-> **{**
+> {
 > 
-> **int count=0;**
+> int count=0;
 > 
-> **pid\_t fpid;**
+> pid\_t fpid;
 > 
-> **fpid = fork();**
+> fpid = fork();
 > 
-> **if(fpid==0){**
+> if(fpid==0){
 > 
-> **int ret;**
+> int ret;
 > 
-> **ret = execl ("/usr/bin/vi", "vi","/home/vanzque/new.txt", NULL);**
+> ret = execl ("/usr/bin/vi", "vi","/home/vanzque/new.txt", NULL);
 > 
-> **if (ret == -1)**
+> if (ret == -1)
 > 
-> **printf("GG");**
+> printf("GG");
 > 
-> **}**
+> }
 > 
-> **else if(fpid&gt;0)**
+> else if(fpid&gt;0)
 > 
-> **{**
+> {
 > 
-> **while(1)**
+> while(1)
 > 
-> **{count++;count--;}**
+> {count++;count--;}
 > 
-> **}**
+> }
 > 
-> **return 0;**
+> return 0;
 > 
-> **}**
+> }
 > ```
->
-> 
 >
 > 
 
@@ -145,87 +145,87 @@
 **有问题的源代码：**
 
 ```c
-**\#include &lt;unistd.h&gt;**
+#include &lt;unistd.h&gt;
 
-**\#include &lt;stdio.h&gt;**
+\#include &lt;stdio.h&gt;
 
-**\#include &lt;sys/types.h&gt;**
+\#include &lt;sys/types.h&gt;
 
-**\#include &lt;stdlib.h&gt;**
+\#include &lt;stdlib.h&gt;
 
-**/\***
+/\*
 
-**疑惑。。。如果不加sleep(1),所有else的父进程都是1615。**
+疑惑。。。如果不加sleep(1),所有else的父进程都是1615。
 
-**\*/**
+\*/
 
-**int main()**
+int main()
 
-**{**
+{
 
-**printf("当前进程(p1)ID为%d\\n",getpid());**
+printf("当前进程(p1)ID为%d\\n",getpid());
 
-**pid\_t fpid2;**
+pid\_t fpid2;
 
-**//sleep(1);**
+//sleep(1);
 
-**fpid2 = fork();**
+fpid2 = fork();
 
-**if(fpid2 == 0){**
+if(fpid2 == 0){
 
-**printf("当前进程(p2)ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程(p2)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**pid\_t fpid4,fpid5;**
+pid\_t fpid4,fpid5;
 
-**sleep(1);**
+sleep(1);
 
-**fpid4 = fork();**
+fpid4 = fork();
 
-**if(fpid4 == 0)**
+if(fpid4 == 0)
 
-**{ **
+{ 
 
-**printf("当前进程(p4)ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程(p4)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**}**
+}
 
-**else**
+else
 
-**{**
+{
 
-**sleep(1);**
+sleep(1);
 
-**fpid5 = fork();**
+fpid5 = fork();
 
-**if(fpid5 == 0)**
+if(fpid5 == 0)
 
-**{**
+{
 
-**printf("当前进程(p5)ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程(p5)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**}**
+}
 
-**}**
+}
 
-**}**
+}
 
-**else{**
+else{
 
-**sleep(1);**
+sleep(1);
 
-**pid\_t fpid3 = fork();**
+pid\_t fpid3 = fork();
 
-**if(fpid3 == 0){**
+if(fpid3 == 0){
 
-**printf("当前进程(p3)ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程(p3)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**}**
+}
 
-**}**
+}
 
-**return 0;**
+return 0;
 
-**}**
+}
 ```
 
 
@@ -233,71 +233,71 @@
 **没问题的源代码：**
 
 ```c
-**\#include &lt;unistd.h&gt;**
+#include &lt;unistd.h&gt;
 
-**\#include &lt;stdio.h&gt;**
+\#include &lt;stdio.h&gt;
 
-**\#include &lt;sys/types.h&gt;**
+\#include &lt;sys/types.h&gt;
 
-**\#include &lt;stdlib.h&gt;**
+\#include &lt;stdlib.h&gt;
 
-**int main()**
+int main()
 
-**{**
+{
 
-**printf("当前进程(p1)ID为%d\\n",getpid());**
+printf("当前进程(p1)ID为%d\\n",getpid());
 
-**pid\_t fpid2;**
+pid\_t fpid2;
 
-**fpid2 = fork();**
+fpid2 = fork();
 
-**if(fpid2 == 0){**
+if(fpid2 == 0){
 
-**printf("当前进程(p2)ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程(p2)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**pid\_t fpid4,fpid5;**
+pid\_t fpid4,fpid5;
 
-**fpid4 = fork();**
+fpid4 = fork();
 
-**if(fpid4 == 0)**
+if(fpid4 == 0)
 
-**{ **
+{ 
 
-**printf("当前进程(p4)ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程(p4)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**}**
+}
 
-**else**
+else
 
-**{**
+{
 
-**fpid5 = fork();**
+fpid5 = fork();
 
-**if(fpid5 == 0)**
+if(fpid5 == 0)
 
-**{**
+{
 
-**printf("当前进程(p5)ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程(p5)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**}**
+}
 
-**}**
+}
 
-**}**
+}
 
-**else{**
+else{
 
-**pid\_t fpid3 = fork();**
+pid\_t fpid3 = fork();
 
-**if(fpid3 &gt; 0){**
+if(fpid3 &gt; 0){
 
-**printf("当前进程(p3)ID为%d,父进程ID为%d\\n",fpid3,getpid());**
+printf("当前进程(p3)ID为%d,父进程ID为%d\\n",fpid3,getpid());
 
-**}**
+}
 
-**}**
+}
 
-**return 0;**
+return 0;
 
 }
 ```
@@ -321,83 +321,82 @@
 **源代码：**
 
 ```c
-**\#include &lt;unistd.h&gt;**
+#include &lt;unistd.h&gt;
 
-**\#include &lt;stdio.h&gt;**
+\#include &lt;stdio.h&gt;
 
-**\#include &lt;sys/types.h&gt;**
+\#include &lt;sys/types.h&gt;
 
-**\#include &lt;stdlib.h&gt;**
+\#include &lt;stdlib.h&gt;
 
-**int main()**
+int main()
 
-**{**
+{
 
-**printf("当前进程(p1)ID为%d\\n",getpid());**
+printf("当前进程(p1)ID为%d\\n",getpid());
 
-**pid\_t fpid2;**
+pid\_t fpid2;
 
-**fpid2 = fork();**
+fpid2 = fork();
 
-**if(fpid2 == 0){**
+if(fpid2 == 0){
 
-**printf("当前进程(p2)ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程(p2)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**pid\_t fpid4,fpid5;**
+pid\_t fpid4,fpid5;
 
-**fpid4 = fork();**
+fpid4 = fork();
 
-**if(fpid4 == 0)**
+if(fpid4 == 0)
 
-**{ **
+{ 
 
-**printf("当前进程(p4)ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程(p4)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**}**
+}
 
-**else**
+else
 
-**{**
+{
 
-**fpid5 = fork();**
+fpid5 = fork();
 
-**if(fpid5 == 0)**
+if(fpid5 == 0)
 
-**{**
+{
 
-**printf("当前进程(p5)ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程(p5)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**}**
+}
 
-**}**
+}
 
-**}**
+}
 
-**else{**
+else{
 
-**pid\_t fpid3 = fork();**
+pid\_t fpid3 = fork();
 
-**if(fpid3 &gt; 0){**
+if(fpid3 &gt; 0){
 
-**printf("当前进程(p3)ID为%d,父进程ID为%d\\n",fpid3,getpid());**
+printf("当前进程(p3)ID为%d,父进程ID为%d\\n",fpid3,getpid());
 
-**}**
+}
 
-**}**
+}
 
-**while(1)**
+while(1)
 
-**{**
+{
 
-**sleep(3);**
 
-**printf("当前进程ID为%d,父进程ID为%d\\n",getpid(),getppid());**
+printf("当前进程ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-**}**
+}
 
-**return 0;**
+return 0;
 
-**}**
+}
 ```
 
 
@@ -415,6 +414,7 @@
 **使用kill -9后：p2结束，并且P4,P5的父进程变成了1615。（此处代码循环结构进行了修改）**
 
 **\
+
 **![](media/image19.png){width="5.772222222222222in" height="3.7527777777777778in"}
 
 **各个进程状态如下：**
