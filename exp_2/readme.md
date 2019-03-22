@@ -139,6 +139,7 @@
 **实验过程与思路：**
 
 **个人思路流程图如下：**
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/14.png)
 
 由以上流程图可设计条件语句进行实现：
 
@@ -306,7 +307,7 @@ return 0;
 
 **实验结果展示：**
 
-![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/14.png)
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/15.png)
 
 ## 实验题目：
 
@@ -405,33 +406,33 @@ return 0;
 
 **输出结果如下：**
 
-![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/15.png)
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/16.png)
 
 **进程树如下：**
 
-![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/16.png)
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/17.png)
 
 **使用kill -9后：p2结束，并且P4,P5的父进程变成了1615。（此处代码循环结构进行了修改）**
 
 **\
 
-**![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/17.png)
+**![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/81.png)
 
 **各个进程状态如下：**
 
 > **P2进程变成了Z+表示该进程处于"Zombie"状态**
 
-![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/81.png)
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/19.png)
 
 > 使用exit(0):
 >
 > 代码需修改处：
 >
-> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/19.png)
+> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/20.png)
 >
 > Z+表示该进程处于"Zombie"状态
 >
-> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/20.png)
+> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/21.png)
 
 **（实验疑惑）此处发现P4,P5的父节点并没有改变，说明P2并没有正常结束。但是其状态已经是zombie了。**
 
@@ -439,17 +440,17 @@ return 0;
 >
 > exit(0)应加在while循环中。以下截图P1也zombie是由于没有写循环了。
 >
-> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/21.png)
->
 > ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/22.png)
+>
+> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/23.png)
 
 **段错误退出：**
 
 **此处对指针进行错误操作。函数取自百科段错误例子**
 
-![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/23.png)
-
 ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/24.png)
+
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/25.png)
 
 **P4,P5父进程号变成1615**
 
