@@ -30,7 +30,7 @@
 
 **使用vi编辑文件：**
 
-![](media/image2.png){width="3.0002602799650044in" height="0.7917355643044619in"}
+![input txt](https://github.com/Vanzque/exp_pic/blob/master/exp_2/1.png){width="3.0002602799650044in" height="0.7917355643044619in"}
 
 **以下是ps –ef|grep追溯结果**
 
