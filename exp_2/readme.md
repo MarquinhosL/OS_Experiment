@@ -71,7 +71,7 @@
 > ```c
 > #include &lt;unistd.h&gt;
 > 
-> \#include &lt;stdio.h&gt;
+> #include &lt;stdio.h&gt;
 > 
 > int main()
 > 
@@ -79,7 +79,7 @@
 > 
 > int count=0;
 > 
-> pid\_t fpid;
+> pid_t fpid;
 > 
 > fpid = fork();
 > 
@@ -147,17 +147,17 @@
 ```c
 #include &lt;unistd.h&gt;
 
-\#include &lt;stdio.h&gt;
+#include &lt;stdio.h&gt;
 
-\#include &lt;sys/types.h&gt;
+#include &lt;sys/types.h&gt;
 
-\#include &lt;stdlib.h&gt;
+#include &lt;stdlib.h&gt;
 
-/\*
+/*
 
 疑惑。。。如果不加sleep(1),所有else的父进程都是1615。
 
-\*/
+*/
 
 int main()
 
@@ -165,7 +165,7 @@ int main()
 
 printf("当前进程(p1)ID为%d\\n",getpid());
 
-pid\_t fpid2;
+pid_t fpid2;
 
 //sleep(1);
 
@@ -175,7 +175,7 @@ if(fpid2 == 0){
 
 printf("当前进程(p2)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-pid\_t fpid4,fpid5;
+pid_t fpid4,fpid5;
 
 sleep(1);
 
@@ -213,7 +213,7 @@ else{
 
 sleep(1);
 
-pid\_t fpid3 = fork();
+pid_t fpid3 = fork();
 
 if(fpid3 == 0){
 
@@ -235,11 +235,11 @@ return 0;
 ```c
 #include &lt;unistd.h&gt;
 
-\#include &lt;stdio.h&gt;
+#include &lt;stdio.h&gt;
 
-\#include &lt;sys/types.h&gt;
+#include &lt;sys/types.h&gt;
 
-\#include &lt;stdlib.h&gt;
+#include &lt;stdlib.h&gt;
 
 int main()
 
@@ -247,7 +247,7 @@ int main()
 
 printf("当前进程(p1)ID为%d\\n",getpid());
 
-pid\_t fpid2;
+pid_t fpid2;
 
 fpid2 = fork();
 
@@ -255,7 +255,7 @@ if(fpid2 == 0){
 
 printf("当前进程(p2)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-pid\_t fpid4,fpid5;
+pid_t fpid4,fpid5;
 
 fpid4 = fork();
 
@@ -287,7 +287,7 @@ printf("当前进程(p5)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
 else{
 
-pid\_t fpid3 = fork();
+pid_t fpid3 = fork();
 
 if(fpid3 &gt; 0){
 
@@ -323,11 +323,11 @@ return 0;
 ```c
 #include &lt;unistd.h&gt;
 
-\#include &lt;stdio.h&gt;
+#include &lt;stdio.h&gt;
 
-\#include &lt;sys/types.h&gt;
+#include &lt;sys/types.h&gt;
 
-\#include &lt;stdlib.h&gt;
+#include &lt;stdlib.h&gt;
 
 int main()
 
@@ -335,7 +335,7 @@ int main()
 
 printf("当前进程(p1)ID为%d\\n",getpid());
 
-pid\_t fpid2;
+pid_t fpid2;
 
 fpid2 = fork();
 
@@ -343,7 +343,7 @@ if(fpid2 == 0){
 
 printf("当前进程(p2)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
-pid\_t fpid4,fpid5;
+pid_t fpid4,fpid5;
 
 fpid4 = fork();
 
@@ -375,7 +375,7 @@ printf("当前进程(p5)ID为%d,父进程ID为%d\\n",getpid(),getppid());
 
 else{
 
-pid\_t fpid3 = fork();
+pid_t fpid3 = fork();
 
 if(fpid3 &gt; 0){
 
