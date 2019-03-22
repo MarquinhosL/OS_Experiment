@@ -30,27 +30,27 @@
 
 **使用vi编辑文件：**
 
-![input txt](https://github.com/Vanzque/exp_pic/blob/master/exp_2/1.png){width="3.0002602799650044in" height="0.7917355643044619in"}
+![input txt](https://github.com/Vanzque/exp_pic/blob/master/exp_2/1.png)
 
 **以下是ps –ef|grep追溯结果**
 
-![](media/image3.png){width="5.772222222222222in" height="2.973611111111111in"}
+![input txt](https://github.com/Vanzque/exp_pic/blob/master/exp_2/2.png)
 
-![](media/image4.png){width="5.772222222222222in" height="3.6951388888888888in"}
+![input txt](https://github.com/Vanzque/exp_pic/blob/master/exp_2/3.png)
 
-![](media/image5.png){width="5.772222222222222in" height="1.6041666666666667in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/4.png)
 
-![](media/image6.png){width="5.772222222222222in" height="3.3027777777777776in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/5.png)
 
 **以下是pstree指令追溯结果：**
 
-![F:\\qq\\952625316\\FileRecv\\MobileFile\\Image\\660CC1TKKGMXK5)\_RR0\]1WF.png](media/image7.png){width="5.772222222222222in" height="1.280592738407699in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/6.png)
 
-![](media/image8.png){width="5.772222222222222in" height="4.361805555555556in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/7.png)
 
-![](media/image9.png){width="5.772222222222222in" height="4.351388888888889in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/8.png)
 
-![](media/image10.png){width="5.772222222222222in" height="4.366666666666666in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/9.png)
 
 **可以看出来二者追溯得到的进程树一致。**
 
@@ -69,9 +69,9 @@
 > **源代码：**
 >
 > ```c
-> #include &lt;unistd.h&gt;
+> #include <unistd.h>
 > 
-> #include &lt;stdio.h&gt;
+> #include <stdio.h>
 > 
 > int main()
 > 
@@ -116,15 +116,15 @@
 
 **通过pstree查看其进程树：**
 
-![F:\\qq\\952625316\\FileRecv\\MobileFile\\Image\\YJ\[T0UHR}GBNO7OQJ}{P{4N.png](media/image11.png){width="4.979166666666667in" height="1.3542016622922135in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/10.png)
 
 **通过 ps aux指令查看进程状态信息，在下图中，由于之前操作另一个进程未关闭，其状态为R+，表示在后台正在运行，另一个R表示正在运行。**
 
-> ![F:\\qq\\952625316\\FileRecv\\MobileFile\\Image\\Q9E%L)ARI\`HSU1WEPPK}SV5.png](media/image12.png){width="5.772222222222222in" height="0.3997222222222222in"}
+> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/11.png)
 >
 > 再通过ps aux –sort=-%cpu 按照cpu占用由大到小排序。如下图所示。
 >
-> ![F:\\qq\\952625316\\FileRecv\\MobileFile\\Image\\E\]MK88KPW\_\]Y5ON9YI97JDY.png](media/image13.png){width="6.2348479877515315in" height="3.274974846894138in"}
+> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/12.png)
 
 ## 实验题目：
 
@@ -134,7 +134,7 @@
 
 使用fork系统调用，创建如下进程树，并使每个进程输出自己的ID和父进程的ID。观察进程的执行顺序和运行状态的变化。
 
-![](media/image14.emf){width="5.770833333333333in" height="2.1666666666666665in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/13.png)
 
 **实验过程与思路：**
 
@@ -145,13 +145,13 @@
 **有问题的源代码：**
 
 ```c
-#include &lt;unistd.h&gt;
+#include <unistd.h>
 
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
-#include &lt;sys/types.h&gt;
+#include <sys/types.h>
 
-#include &lt;stdlib.h&gt;
+#include <stdlib.h>
 
 /*
 
@@ -233,13 +233,13 @@ return 0;
 **没问题的源代码：**
 
 ```c
-#include &lt;unistd.h&gt;
+#include <unistd.h>
 
-#include &lt;stdio.h&gt;
+#include <stdio.h>
 
-#include &lt;sys/types.h&gt;
+#include <sys/types.h>
 
-#include &lt;stdlib.h&gt;
+#include <stdlib.h>
 
 int main()
 
@@ -306,7 +306,7 @@ return 0;
 
 **实验结果展示：**
 
-![](media/image16.png){width="5.270833333333333in" height="1.9482064741907261in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/14.png)
 
 ## 实验题目：
 
@@ -405,33 +405,33 @@ return 0;
 
 **输出结果如下：**
 
-![](media/image17.png){width="5.604166666666667in" height="3.097856517935258in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/15.png)
 
 **进程树如下：**
 
-![](media/image18.png){width="5.772222222222222in" height="1.0284722222222222in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/16.png)
 
 **使用kill -9后：p2结束，并且P4,P5的父进程变成了1615。（此处代码循环结构进行了修改）**
 
 **\
 
-**![](media/image19.png){width="5.772222222222222in" height="3.7527777777777778in"}
+**![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/17.png)
 
 **各个进程状态如下：**
 
 > **P2进程变成了Z+表示该进程处于"Zombie"状态**
 
-![](media/image20.png){width="6.4375in" height="0.9704265091863518in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/81.png)
 
 > 使用exit(0):
 >
 > 代码需修改处：
 >
-> ![](media/image21.png){width="5.772222222222222in" height="4.142361111111111in"}
+> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/19.png)
 >
 > Z+表示该进程处于"Zombie"状态
 >
-> ![](media/image22.png){width="5.772222222222222in" height="0.525in"}
+> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/20.png)
 
 **（实验疑惑）此处发现P4,P5的父节点并没有改变，说明P2并没有正常结束。但是其状态已经是zombie了。**
 
@@ -439,17 +439,17 @@ return 0;
 >
 > exit(0)应加在while循环中。以下截图P1也zombie是由于没有写循环了。
 >
-> ![](media/image23.png){width="5.772222222222222in" height="4.291666666666667in"}
+> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/21.png)
 >
-> ![](media/image24.png){width="5.772222222222222in" height="3.4902777777777776in"}
+> ![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/22.png)
 
 **段错误退出：**
 
 **此处对指针进行错误操作。函数取自百科段错误例子**
 
-![](media/image25.png){width="5.772222222222222in" height="5.227083333333334in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/23.png)
 
-![](media/image26.png){width="5.772222222222222in" height="1.1208333333333333in"}
+![image text](https://github.com/Vanzque/exp_pic/blob/master/exp_2/24.png)
 
 **P4,P5父进程号变成1615**
 
