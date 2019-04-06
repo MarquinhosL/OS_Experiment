@@ -1,3 +1,7 @@
+图片上传至https://github.com/Vanzque/exp_pic/blob/master/exp_3
+如果没有出现请稍作等待
+
+
 # 《操作系统》实验报告
 
 ------------ ---------------------- --
