@@ -533,46 +533,46 @@
 ### 菜单展示效果如下：
 
 通过输入相关序号选择相关功能进行模拟操作。
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/1.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/1.png)
 
 
 ### 创建文件功能：
 
 通过输入文件名称、大小和权限进行创建。
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/2.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/2.png)
 
 
 ### 删除文件功能：
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/3.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/3.png)
 
 
 ### 文件重命名功能：
 
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/4.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/4.png)
 
 ### 打开文件功能
 
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/5.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/5.png)
 
 ### 查看磁盘功能：
 
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/6.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/6.png)
 
 ### 读取文件功能：
 
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/7.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/7.png)
 
 ### 写文件功能
 
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/8.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/8.png)
 
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/9.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/9.png)
 
 
 ### 查看文件属性
 
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/10.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/10.png)
 
 ### 关闭文件功能
 
-![](https://github.com/Vanzque/exp_pic/blob/master/exp5/11.png)
+![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/11.png)
