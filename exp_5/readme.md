@@ -538,20 +538,21 @@
 
 ### 创建文件功能：
 
-通过输入文件名称、大小和权限进行创建。
+通过输入文件名称、大小和权限进行创建。创建完毕可以查看所有文件状况。本程序不允许创建相同文件名的文件。
 ![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/2.png)
 
 
 ### 删除文件功能：
+通过输入文件名称在磁盘中找到相应的数据，对其进行清空，同时删除掉文件控制块中的相关数据。如果文件正在打开无法进行删除，需等待文件关闭后才可以。
 ![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/3.png)
 
 
 ### 文件重命名功能：
-
+简单的重命名功能，对应需要修改文件控制块的相关信息。如果文件正在打开无法进行重命名，需等待文件关闭后才可以。
 ![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/4.png)
 
 ### 打开文件功能
-
+打开文件功能在此处主要是创建一个文件管理表。通过链表进行存储。将磁盘数据导入到对应创建的链表相应数据缓冲区，此处用数组来替代。
 ![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/5.png)
 
 ### 查看磁盘功能：
@@ -559,20 +560,21 @@
 ![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/6.png)
 
 ### 读取文件功能：
-
+该功能首先访问文件控制块查看文件的权限，如果文件权限是可读与读写的话，允许进行读取文件操作，否则将阻止。需要注意的是，此处读取的数据取自文件表中的文件缓冲区数据，而不是直接从磁盘中读取相关的数据内容。
+此处的文件读取由于数据较短，没有按照实验报告创建读指针，任意读取每一个字节，之后可以对此程序进行完善。
 ![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/7.png)
 
 ### 写文件功能
-
+写功能与读取功能类似，先访问文件控制块查看文件的权限，如果文件权限是可写与读写的话，允许进行读取文件操作，否则将阻止。系统将输入的字符串读取存储到文件表的缓冲区，而不是直接写入对应的磁盘。
 ![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/8.png)
-
+通过再一次读取查看是否写入成功。
 ![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/9.png)
 
 
 ### 查看文件属性
-
+该功能可以查看文件的相关属性
 ![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/10.png)
 
 ### 关闭文件功能
-
+此处关闭的文件应当都在文件表中有对应的表目，如果没有对应数据的话，那么将会提醒文件没有打开或者不存在，用户可以查看目录进行纠错。当读写完成后，文件调用该函数，将文件状态修改成关闭，将缓冲区的数据逐一写入到系统磁盘中。最后，删除对应的文件表目。
 ![](https://github.com/Vanzque/exp_pic/blob/master/exp_5/11.png)
